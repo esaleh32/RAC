@@ -1,20 +1,9 @@
 import streamlit as st
-import streamlit as st
-import pandas as pd
-import statsmodels.api as sm
-from scipy import stats
-from statsmodels.iolib.table import SimpleTable, default_txt_fmt
-from pandas import read_csv
-import pandas as pd
-from sklearn.model_selection import RepeatedKFold
-import matplotlib.pyplot as plt
-import numpy as np
-from sklearn import linear_model, preprocessing
-import scipy
-from sklearn.linear_model import LinearRegression
-import statsmodels.formula.api as smf
-import statistics
-import pickle
+import About
+import Home3
+import rca
+import rca2
+
 from multiapp import MultiApp
 
 app = MultiApp()
