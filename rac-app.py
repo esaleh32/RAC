@@ -1,9 +1,4 @@
 import streamlit as st
-from multiapp import MultiApp
-import Home2
-import ndf2
-import cores
-import Help
 import streamlit as st
 import pandas as pd
 import statsmodels.api as sm
@@ -20,6 +15,7 @@ from sklearn.linear_model import LinearRegression
 import statsmodels.formula.api as smf
 import statistics
 import pickle
+import multiapp 
 
 app = MultiApp()
 
