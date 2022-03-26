@@ -1,10 +1,7 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 
 
-import pandas as pd
-import numpy as np
+
 def app():
     st.title('About page'    )
     st.write('This app was programmed as part of my article, namely **"Machine learning framework for analysis and design of recycled aggregate reinforced concrete beams"**, submitted to **"automation in construction"** jounral')
