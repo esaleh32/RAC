@@ -1,5 +1,5 @@
 import streamlit as st
-import About
+import about
 import Home3
 import rca
 import rca2
