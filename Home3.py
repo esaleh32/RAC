@@ -1,11 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import pickle
-from sklearn.ensemble import RandomForestClassifier
-import streamlit as st
-import pandas as pd
-import xgboost as xgb
 def app():
 
     st.write("""
