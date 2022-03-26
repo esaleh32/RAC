@@ -9,4 +9,5 @@ statsmodels==0.12.2
 sklearn==0.0
 scipy==1.7.1
 xgboost==1.5.1
+MultiApp==1.0
 
