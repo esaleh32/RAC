@@ -7,6 +7,25 @@ def app():
     st.title('About page'    )
     st.write('This app was programmed as part of my article, namely **"Machine learning framework for analysis and design of recycled aggregate reinforced concrete beams"**, submitted to **"automation in construction"** jounral')
     st.write('It allows to predict the failure mode, flexural, shear capacity of recycled aggregate concrete (RAC) beams by defining the eleven-inputs (r%, dmax, b,h, d, a⁄d, ρ%, ρw%, fy, fyw, and  fc):')
+    st.subheader('Dataset used for models development')
+    st.write ("""Press to download the collected Experimental database of RAC beams used for the development of these apps""")
+    df = pd.read_csv("rca.csv")
+
+    @st.cache
+    def convert_df(df):
+       return df.to_csv().encode('utf-8')
+
+
+    csv = convert_df(df)
+
+    st.download_button(
+       "Experimental Database",
+       csv,
+       "file.csv",
+       "text/csv",
+       key='download-csv'
+    )
+
     st.subheader('Nomenclatures')
     st.write('V = the predicted shear capacity (kN)')
     st.write('M = the predicted flexural strength (kN.m)')
