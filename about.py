@@ -39,8 +39,8 @@ def app():
     st.write('b=width of the beam (mm)')
     st.write('ρw= shear reinforcement ratio')
     st.write('r= recycled aggregate replacement ratio')
-    st.subheader('Dataset used for models development')
-    st.write ("""Press to download the collected Experimental database of RAC beams used for the development of these apps""")
+  #  st.subheader('Dataset used for models development')
+   # st.write ("""Press to download the collected Experimental database of RAC beams used for the development of these apps""")
     df = pd.read_csv("rca.csv")
 
     @st.cache
