@@ -32,7 +32,7 @@ def app():
         dmax = st.sidebar.selectbox('Maximum aggregate size, dmax (mm)',(16,19,25,20,25,32))
         b= st.sidebar.input('Beam width, b (mm)')
         h = st.sidebar.input('Beam depth, h (mm)')
-        d = st.sidebar.input('concrete cover (mm)',400)
+        d = st.sidebar.input('concrete cover (mm)')
         ad = st.sidebar.input('Shear span-to-depth ratio, a/d')
         ro=st.sidebar.input('Logitudenal reinforcement ratio, \u03C1 %')
         row=st.sidebar.input('Shear reinforcement ratio, \u03C1w %')
