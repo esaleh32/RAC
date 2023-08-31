@@ -27,7 +27,7 @@ def app():
 
 
     def user_input_features():
-        r = st.sidebar.slider('Replacement ratio, r%',0.0,100.0,50.0)
+        r = st.sidebar.input('Replacement ratio, r%')
 
         dmax = st.sidebar.selectbox('Maximum aggregate size, dmax (mm)',(16,19,25,20,25,32))
         b= st.sidebar.input('Beam width, b (mm)')
