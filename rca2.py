@@ -56,8 +56,8 @@ def app():
 
 
 
-    pd.set_option("display.precision", 2)
-    pd.options.display.float_format = "{:,.2g}".format
+  #  pd.set_option("display.precision", 2)
+   # pd.options.display.float_format = "{:,.2g}".format
 
     input_df = user_input_features()
 '''
