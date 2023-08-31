@@ -13,8 +13,8 @@ def app():
     def user_input_features():
         r = st.sidebar.slider('Replacement ratio, r%',0.0,100.0,50.0)
 
-        dmax = st.sidebar.selectbox('Maximum aggregate size, dmax (mm)',(16,19,25,20,25,32))
-        b= st.sidebar.slider('Beam width, b (mm)', 100.0,400.0,200.0)
+        dmax = st.number_input('Maximum aggregate size, dmax (mm)')
+        b= st.number_input('Beam width, b (mm)')
         h = st.sidebar.slider('Beam depth, h (mm)', 150.0,600.0,300.0)
         d = st.sidebar.slider('Concrete cover, (mm)',20.0,75.0,50.0)
         ad = st.sidebar.slider('Shear span-to-depth ratio, a/d', 1.0,6.0,3.0)
