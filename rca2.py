@@ -54,13 +54,13 @@ def app():
         return features
 
 
-'''
+
 
     pd.set_option("display.precision", 2)
     pd.options.display.float_format = "{:,.2g}".format
 
     input_df = user_input_features()
-
+'''
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
         sub_s = "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
