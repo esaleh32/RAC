@@ -54,7 +54,7 @@ def app():
         return features
 
 
-
+'''
 
     pd.set_option("display.precision", 2)
     pd.options.display.float_format = "{:,.2g}".format
@@ -70,7 +70,7 @@ def app():
     # This will be useful for the encoding phase
 
 
-'''
+
     penguins_raw = pd.read_csv('rca.csv')
     penguins = penguins_raw.drop(columns=['V','MF','M'])
     df = pd.concat([input_df,penguins],axis=0)
