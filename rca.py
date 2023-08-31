@@ -14,14 +14,14 @@ def app():
         r = st.sidebar.number_input('Replacement ratio, r%')
         dmax = st.sidebar.selectbox('Maximum aggregate size, dmax (mm)',(16,19,25,20,25,32))
         b= st.sidebar.number_input('Beam width, b (mm)')
-        h = st.sidebar.slider('Beam depth, h (mm)', 150.0,600.0,300.0)
-        d = st.sidebar.slider('Concrete cover, (mm)',20.0,75.0,50.0)
-        ad = st.sidebar.slider('Shear span-to-depth ratio, a/d', 1.0,6.0,3.0)
-        ro=st.sidebar.slider('Logitudenal reinforcement ratio, \u03C1 %', 0.1,5.0,2.0)
-        row=st.sidebar.slider('Shear reinforcement ratio, \u03C1w %', 0.1,5.0,1.0)
-        fy=st.sidebar.slider('Logitudenal steel yield strength, fy (MPa)', 330.0,700.0,420.0)
-        fyw=st.sidebar.slider('Shear steel yield strength, fyw (MPa)', 0.0,700.0,420.0)
-        fc=st.sidebar.slider('Concrete compressive strength, f\'c (MPa)', 20.0,65.0,35.0)
+        h = st.sidebar.number_input('Beam depth, h (mm)')
+        d = st.sidebar.number_input('Concrete cover, (mm)')
+        ad = st.sidebar.number_input('Shear span-to-depth ratio, a/d')
+        ro=st.sidebar.number_input('Logitudenal reinforcement ratio, \u03C1 %')
+        row=st.sidebar.number_input('Shear reinforcement ratio, \u03C1w %')
+        fy=st.sidebar.number_input('Logitudenal steel yield strength, fy (MPa)')
+        fyw=st.sidebar.number_input('Shear steel yield strength, fyw (MPa)')
+        fc=st.sidebar.number_input('Concrete compressive strength, f\'c (MPa)')
         data = {'r': r,
                     'dmax': dmax,
                     'b': b,
