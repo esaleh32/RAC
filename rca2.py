@@ -64,7 +64,7 @@ def app():
     model.fit(data, f)
 # define new data
    # row =rr2
-    new_data = asarray([dd])
+    new_data = dd
 # make a prediction
     yhat = model.predict(new_data)
 # summarize prediction
@@ -72,7 +72,7 @@ def app():
     model.fit(data, f2)
 # define new data
     
-    new_data = asarray([dd])
+   # new_data = asarray([dd])
 # make a prediction
     yhat = model.predict(new_data)
 # summarize prediction
