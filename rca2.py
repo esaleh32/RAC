@@ -75,7 +75,7 @@ def app():
     # Apply model to make predictions
     prediction = load_clf.predict(xgtest)
     st.write(prediction)
-'''
+
     if prediction <0.5:
         prediction=0
     else:
@@ -99,7 +99,7 @@ def app():
         meur=As*dd[fy]*dd[d]*(1-0.513*((As*dd[fy])/(dd[b]*dd[d]*dd[fc])))
         meur=meur/1000000
         return meur
-    '''
+    
     prediction_shear = load_regs.predict(rr2[:1])+(dd[row]/1)*dd[fyw]*dd[d]*10**-3
     if dd[r]<=25:
         prediction_fle = (meur3(dd)+np.random.uniform(8,10,1))
