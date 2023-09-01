@@ -46,13 +46,12 @@ def app():
     penguins_raw = pd.read_csv('rca.csv')
     penguins = penguins_raw.drop(columns=['V','MF','M'])
     df = pd.concat([input_df,penguins],axis=0)
-    st.write(df)
     #df.columns=['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']
     st.subheader('User Input features')
     st.write(df[:1])
     X=pd.DataFrame(df[:1])
-    rr=X[['b (mm)','h (mm)','d (mm)','\u03C1%','fy (MPa)','f\'c (MPa)']]
-    rr2=X[['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']]
+    #rr=X[['b (mm)','h (mm)','d (mm)','\u03C1%','fy (MPa)','f\'c (MPa)']]
+    #rr2=X[['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']]
     from xgboost import XGBRegressor
     from numpy import asarray
     raw = pd.read_csv('rca.csv')
@@ -66,7 +65,7 @@ def app():
     model.fit(data, f)
 # define new data
     row =rr2
-    new_data = asarray([row])
+    new_data = asarray([dd])
 # make a prediction
     yhat = model.predict(new_data)
 # summarize prediction
@@ -74,7 +73,7 @@ def app():
     model.fit(data, f2)
 # define new data
     
-    new_data = asarray([row])
+    new_data = asarray([dd])
 # make a prediction
     yhat = model.predict(new_data)
 # summarize prediction
