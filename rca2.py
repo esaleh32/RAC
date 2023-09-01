@@ -64,7 +64,7 @@ def app():
     model.fit(data, f)
 # define new data
    # row =rr2
-    new_data = dd.T[1:]
+    new_data = asarray([dd])
     st.write(new_data)
 # make a prediction
     yhat = model.predict(new_data)
