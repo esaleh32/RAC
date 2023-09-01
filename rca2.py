@@ -63,7 +63,7 @@ def app():
     X=pd.DataFrame(df[:1])
     rr=X[['b (mm)','h (mm)','d (mm)','\u03C1%','fy (MPa)','f\'c (MPa)']]
     rr2=X[['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']]
-
+    st.write(rr2)
     # Reads in saved classification model
     load_clf = pickle.load(open('clf.pkl', 'rb'))
     load_regs = pickle.load(open('shearp.pkl', 'rb'))
