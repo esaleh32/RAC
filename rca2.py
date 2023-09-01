@@ -12,33 +12,20 @@ def app():
     # Capacity Prediction of Recycled Aggregate Concrete (RAC) Beams App""")
 
 
-    r=0
-    dmax=1
-    b=2
-    h=3
-    d=4
-    ad=5
-    ro=6
-    row=7
-    fy=8
-    fyw=9
-    fc=10
-    sv=11
-
+   st.sidebar.header('User Input Features')
 
     def user_input_features():
-        r = st.sidebar.input('Replacement ratio, r%')
-
+        r = st.sidebar.number_input('Replacement ratio, r%')
         dmax = st.sidebar.selectbox('Maximum aggregate size, dmax (mm)',(16,19,25,20,25,32))
-        b= st.sidebar.input('Beam width, b (mm)')
-        h = st.sidebar.input('Beam depth, h (mm)')
-        d = st.sidebar.input('concrete cover (mm)')
-        ad = st.sidebar.input('Shear span-to-depth ratio, a/d')
-        ro=st.sidebar.input('Logitudenal reinforcement ratio, \u03C1 %')
-        row=st.sidebar.input('Shear reinforcement ratio, \u03C1w %')
-        fy=st.sidebar.input('Logitudenal steel yield strength, fy (MPa)')
-        fyw=st.sidebar.input('Shear steel yield strength, fyw (MPa)')
-        fc=st.sidebar.input('Concrete compressive strength, f\'c (MPa)')
+        b= st.sidebar.number_input('Beam width, b (mm)')
+        h = st.sidebar.number_input('Beam depth, h (mm)')
+        d = st.sidebar.number_input('Concrete cover, (mm)')
+        ad = st.sidebar.number_input('Shear span-to-depth ratio, a/d')
+        ro=st.sidebar.number_input('Logitudenal reinforcement ratio, \u03C1 %')
+        row=st.sidebar.number_input('Shear reinforcement ratio, \u03C1w %')
+        fy=st.sidebar.number_input('Logitudenal steel yield strength, fy (MPa)')
+        fyw=st.sidebar.number_input('Shear steel yield strength, fyw (MPa)')
+        fc=st.sidebar.number_input('Concrete compressive strength, f\'c (MPa)')
         data = {'r': r,
                     'dmax': dmax,
                     'b': b,
@@ -59,8 +46,8 @@ def app():
     pd.set_option("display.precision", 2)
     pd.options.display.float_format = "{:,.2g}".format
 
-  #  input_df = user_input_features()
-
+    input_df = user_input_features()
+'''
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
         sub_s = "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
@@ -324,4 +311,4 @@ def app():
     st.table(dataf)
     #st.write(vaci(X))
     #st.write(prediction_proba)
-
+'''
