@@ -65,11 +65,10 @@ def app():
 # define new data
    # row =rr2
     new_data = asarray([dd])
-    st.write(new_data)
 # make a prediction
     yhat = model.predict(new_data)
 # summarize prediction
-    st.write('Predicted shear capacity: %.3f' % yhat)
+    st.write('Predicted shear capacity (kN): %.3f' % yhat)
     model.fit(data, f2)
 # define new data
     
@@ -77,8 +76,8 @@ def app():
 # make a prediction
     yhat = model.predict(new_data)
 # summarize prediction
-    st.write('Predicted flexural capacity: %.3f' % yhat)
-'''
+    st.write('Predicted flexural capacity (kN.m): %.3f' % yhat)
+
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
         sub_s = "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
@@ -96,9 +95,9 @@ def app():
     st.subheader('User Input features')
     st.write(df[:1])
     X=pd.DataFrame(df[:1])
-    rr=X[['b (mm)','h (mm)','d (mm)','\u03C1%','fy (MPa)','f\'c (MPa)']]
-    rr2=X[['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']]
-    st.write(rr2)
+    #rr=X[['b (mm)','h (mm)','d (mm)','\u03C1%','fy (MPa)','f\'c (MPa)']]
+    #rr2=X[['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']]
+    #st.write(rr2)
     # Reads in saved classification model
     load_clf = pickle.load(open('clf.pkl', 'rb'))
     load_regs = pickle.load(open('shearp.pkl', 'rb'))
@@ -110,7 +109,7 @@ def app():
     # Apply model to make predictions
     prediction = load_clf.predict(xgtest)
     st.write(prediction)
-    prediction2 = load_regs.predict(xgtest)
+    prediction2 = load_regs.predict(new_data)
     st.write(prediction2)
     if prediction <0.5:
         prediction=0
@@ -135,8 +134,9 @@ def app():
         meur=As*dd[fy]*dd[d]*(1-0.513*((As*dd[fy])/(dd[b]*dd[d]*dd[fc])))
         meur=meur/1000000
         return meur
-    
-    prediction_shear = load_regs.predict(rr2[:1])+(dd[row]/1)*dd[fyw]*dd[d]*10**-3
+    prediction_shear = load_regs.predict(new_data)
+   # prediction_shear = load_regs.predict(rr2[:1])+(dd[row]/1)*dd[fyw]*dd[d]*10**-3
+   '''
     if dd[r]<=25:
         prediction_fle = (meur3(dd)+np.random.uniform(8,10,1))
     if 25<dd[r]<=50:
@@ -145,7 +145,7 @@ def app():
         prediction_fle = (meur3(dd)+np.random.uniform(3,6,1))
     if 75<dd[r]<=100:
         prediction_fle = (meur3(dd)+np.random.uniform(0,3,1))
-
+  '''
 
     cc=[]
     for i in prediction_shear:
@@ -346,4 +346,4 @@ def app():
     #st.write(vaci(X))
     #st.write(prediction_proba)
 
-'''
+
