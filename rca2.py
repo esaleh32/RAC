@@ -109,7 +109,7 @@ def app():
         prediction_fle = (meur3(dd)+np.random.uniform(3,6,1))
     if 75<dd[r]<=100:
         prediction_fle = (meur3(dd)+np.random.uniform(0,3,1))
-'''
+
 
     cc=[]
     for i in prediction_shear:
@@ -124,7 +124,7 @@ def app():
     ddr.columns=['V (kN)']
 
     st.write(ddr)
-
+'''
     st.subheader('Flexural Capacity Prediction, M (kN.m)')
     mm=[]
     for i in prediction_fle:
