@@ -75,7 +75,8 @@ def app():
     # Apply model to make predictions
     prediction = load_clf.predict(xgtest)
     st.write(prediction)
-
+    prediction2 = load_regs.predict(xgtest)
+    st.write(prediction2)
     if prediction <0.5:
         prediction=0
     else:
