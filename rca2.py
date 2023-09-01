@@ -1,4 +1,48 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+import pickle
+import xgboost as xgb
 
+def app():
+    st.title(' Failure mode classification app')
+    st.write("""
+    **This app predicts failure mode of of Recycled Aggregate Concrete (RAC) Beams**""")
+    st.sidebar.header('User Input Features')
+
+    def user_input_features():
+        r = st.sidebar.number_input('Replacement ratio, r%')
+        dmax = st.sidebar.selectbox('Maximum aggregate size, dmax (mm)',(16,19,25,20,25,32))
+        b= st.sidebar.number_input('Beam width, b (mm)')
+        h = st.sidebar.number_input('Beam depth, h (mm)')
+        d = st.sidebar.number_input('Concrete cover, (mm)')
+        ad = st.sidebar.number_input('Shear span-to-depth ratio, a/d')
+        ro=st.sidebar.number_input('Logitudenal reinforcement ratio, \u03C1 %')
+        row=st.sidebar.number_input('Shear reinforcement ratio, \u03C1w %')
+        fy=st.sidebar.number_input('Logitudenal steel yield strength, fy (MPa)')
+        fyw=st.sidebar.number_input('Shear steel yield strength, fyw (MPa)')
+        fc=st.sidebar.number_input('Concrete compressive strength, f\'c (MPa)')
+        data = {'r': r,
+                    'dmax': dmax,
+                    'b': b,
+                    'h': h,
+                    'd': h-d,
+                    'ad': ad, 'ro': ro,
+                    'row': row,
+                    'fy': fy,
+                    'fyw': fyw,
+                    'fc': fc,
+                    }
+        features = pd.DataFrame(data, index=[0])
+        return features
+
+
+
+
+    pd.set_option("display.precision", 2)
+    pd.options.display.float_format = "{:,.2g}".format
+
+    input_df = user_input_features()
 '''
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
