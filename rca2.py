@@ -5,9 +5,9 @@ import pickle
 import xgboost as xgb
 
 def app():
-    st.title(' Failure mode classification app')
+    st.title('Capacity Prediction App')
     st.write("""
-    **This app predicts failure mode of of Recycled Aggregate Concrete (RAC) Beams**""")
+    **This app predicts the capacity of Recycled Aggregate Concrete (RAC) Beams**""")
     st.sidebar.header('User Input Features')
 
     def user_input_features():
