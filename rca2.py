@@ -71,7 +71,7 @@ def app():
 
     xgtest = xgb.DMatrix(rr2)
 
-'''
+
     # Apply model to make predictions
     prediction = load_clf.predict(xgtest)
     #st.write(prediction)
@@ -82,6 +82,7 @@ def app():
         prediction=1
     #xgDMatrix = xgb.DMatrix(rr2[:1]) #create Dmatrix
     dd=X.iloc[0]
+    '''
     def meur3(dd):
         r=0
         dmax=1
