@@ -53,7 +53,7 @@ def app():
 # fit model
     model.fit(data, f)
 # define new data
-    row = input_df 
+    row = [input_df]
     new_data = asarray([row])
 # make a prediction
     yhat = model.predict(new_data)
