@@ -59,7 +59,7 @@ def app():
     f=raw['V']
     f2=raw['M']
     dd=X.iloc[0]
-    '''
+    
     model = XGBRegressor()
 # fit model
     model.fit(data, f)
@@ -137,7 +137,7 @@ def app():
         return meur
     prediction_shear = load_regs.predict(new_data)
    # prediction_shear = load_regs.predict(rr2[:1])+(dd[row]/1)*dd[fyw]*dd[d]*10**-3
-   '''
+   
     if dd[r]<=25:
         prediction_fle = (meur3(dd)+np.random.uniform(8,10,1))
     if 25<dd[r]<=50:
@@ -146,7 +146,7 @@ def app():
         prediction_fle = (meur3(dd)+np.random.uniform(3,6,1))
     if 75<dd[r]<=100:
         prediction_fle = (meur3(dd)+np.random.uniform(0,3,1))
-  '''
+  
 
     cc=[]
     for i in prediction_shear:
@@ -346,5 +346,5 @@ def app():
     st.table(dataf)
     #st.write(vaci(X))
     #st.write(prediction_proba)
-
+'''
 
