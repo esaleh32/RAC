@@ -71,7 +71,7 @@ def app():
 
     xgtest = xgb.DMatrix(rr2)
 
-
+'''
     # Apply model to make predictions
     prediction = load_clf.predict(xgtest)
     #st.write(prediction)
@@ -308,3 +308,4 @@ def app():
     #st.write(vaci(X))
     #st.write(prediction_proba)
 
+'''
