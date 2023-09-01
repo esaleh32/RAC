@@ -109,7 +109,7 @@ def app():
         prediction_fle = (meur3(dd)+np.random.uniform(3,6,1))
     if 75<dd[r]<=100:
         prediction_fle = (meur3(dd)+np.random.uniform(0,3,1))
-
+'''
 
     cc=[]
     for i in prediction_shear:
@@ -310,4 +310,4 @@ def app():
     #st.write(vaci(X))
     #st.write(prediction_proba)
 
-'''
+
