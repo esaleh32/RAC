@@ -47,7 +47,7 @@ def app():
     penguins = penguins_raw.drop(columns=['V','MF','M'])
     df = pd.concat([input_df,penguins],axis=0)
     st.write(df)
-    df.columns=['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']
+    #df.columns=['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']
     st.subheader('User Input features')
     st.write(df[:1])
     X=pd.DataFrame(df[:1])
