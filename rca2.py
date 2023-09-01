@@ -74,8 +74,8 @@ def app():
 
     # Apply model to make predictions
     prediction = load_clf.predict(xgtest)
-    #st.write(prediction)
-
+    st.write(prediction)
+'''
     if prediction <0.5:
         prediction=0
     else:
@@ -124,7 +124,7 @@ def app():
     ddr.columns=['V (kN)']
 
     st.write(ddr)
-'''
+
     st.subheader('Flexural Capacity Prediction, M (kN.m)')
     mm=[]
     for i in prediction_fle:
