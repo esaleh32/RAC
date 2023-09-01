@@ -59,6 +59,7 @@ def app():
     f=raw['V']
     f2=raw['M']
     dd=X.iloc[0]
+    '''
     model = XGBRegressor()
 # fit model
     model.fit(data, f)
@@ -77,7 +78,7 @@ def app():
     yhat = model.predict(new_data)
 # summarize prediction
     st.write('Predicted flexural capacity (kN.m): %.3f' % yhat)
-
+'''
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
         sub_s = "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
