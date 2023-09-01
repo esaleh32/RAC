@@ -64,7 +64,7 @@ def app():
     model.fit(data, f)
 # define new data
    # row =rr2
-    new_data = dd
+    new_data = dd.T
 # make a prediction
     yhat = model.predict(new_data)
 # summarize prediction
