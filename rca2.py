@@ -43,6 +43,13 @@ def app():
     pd.options.display.float_format = "{:,.2g}".format
 
     input_df = user_input_features()
+    df = pd.concat([input_df,penguins],axis=0)
+    df.columns=['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']
+    st.subheader('User Input features')
+    st.write(df[:1])
+    X=pd.DataFrame(df[:1])
+    rr=X[['b (mm)','h (mm)','d (mm)','\u03C1%','fy (MPa)','f\'c (MPa)']]
+    rr2=X[['r%','d{}{}{} (mm)'.format(get_sub('m'),get_sub('a'),get_sub('x')),'b (mm)','h (mm)','d (mm)','a/d','\u03C1%','\u03C1w %','fy (MPa)','fyw (MPa)','f\'c (MPa)']]
     from xgboost import XGBRegressor
     from numpy import asarray
     raw = pd.read_csv('rca.csv')
@@ -53,7 +60,7 @@ def app():
 # fit model
     model.fit(data, f)
 # define new data
-    row = [input_df]
+    row =rr2
     new_data = asarray([row])
 # make a prediction
     yhat = model.predict(new_data)
