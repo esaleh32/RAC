@@ -2,7 +2,7 @@ import streamlit as st
 import about
 import Home3
 import rca
-import rca2
+#import rca2
 
 from multiapp import MultiApp
 
