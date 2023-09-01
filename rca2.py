@@ -43,7 +43,31 @@ def app():
     pd.options.display.float_format = "{:,.2g}".format
 
     input_df = user_input_features()
-
+    from xgboost import XGBRegressor
+    from numpy import asarray
+    raw = pd.read_csv('rca.csv')
+    data = raw.drop(columns=['V','MF','M'])
+    f=raw['V']
+    f2=raw['M']
+    model = XGBRegressor()
+# fit model
+    model.fit(data, f)
+# define new data
+    row = input_df 
+    new_data = asarray([row])
+# make a prediction
+    yhat = model.predict(new_data)
+# summarize prediction
+    st.write('Predicted shear capacity: %.3f' % yhat)
+    model.fit(data, f2)
+# define new data
+    
+    new_data = asarray([row])
+# make a prediction
+    yhat = model.predict(new_data)
+# summarize prediction
+    st.write('Predicted flexural capacity: %.3f' % yhat)
+'''
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
         sub_s = "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
@@ -311,4 +335,4 @@ def app():
     #st.write(vaci(X))
     #st.write(prediction_proba)
 
-
+'''
