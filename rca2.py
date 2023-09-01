@@ -82,7 +82,7 @@ def app():
         prediction=1
     #xgDMatrix = xgb.DMatrix(rr2[:1]) #create Dmatrix
     dd=X.iloc[0]
-    '''
+    
     def meur3(dd):
         r=0
         dmax=1
@@ -116,7 +116,7 @@ def app():
         cc.append(formatted_float)
 
 
-
+'''
 
     st.subheader('Shear Capacity Prediction, V (kN)')
     ddr=pd.DataFrame(cc)
