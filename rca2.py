@@ -56,6 +56,8 @@ def app():
     data = raw.drop(columns=['V','MF','M'])
     f=raw['V']
     f2=raw['M']
+    dd=X.iloc[0]
+    st.write (dd)
     model = XGBRegressor()
 # fit model
     model.fit(data, f)
