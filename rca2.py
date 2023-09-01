@@ -59,12 +59,11 @@ def app():
     f=raw['V']
     f2=raw['M']
     dd=X.iloc[0]
-    st.write (dd)
     model = XGBRegressor()
 # fit model
     model.fit(data, f)
 # define new data
-    row =rr2
+   # row =rr2
     new_data = asarray([dd])
 # make a prediction
     yhat = model.predict(new_data)
