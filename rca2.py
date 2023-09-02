@@ -62,22 +62,25 @@ def app():
     
     model = XGBRegressor()
 # fit model
-    model.fit(data, f)
+   # model.fit(data, f)
 # define new data
    # row =rr2
     new_data = asarray([dd])
 # make a prediction
-    yhat = model.predict(new_data)
+   # yhat = model.predict(new_data)
 # summarize prediction
-    st.write('Predicted shear capacity (kN): %.3f' % yhat)
-    model.fit(data, f2)
+   # st.write('Predicted shear capacity (kN): %.3f' % yhat)
+   # model.fit(data, f2)
 # define new data
     
    # new_data = asarray([dd])
 # make a prediction
-    yhat = model.predict(new_data)
+    #yhat = model.predict(new_data)
 # summarize prediction
-    st.write('Predicted flexural capacity (kN.m): %.3f' % yhat)
+    
+    #st.write('Predicted flexural capacity (kN.m): %.3f' % yhat)
+    load_regs = pickle.load(open('shearp.pkl', 'rb'))
+    st.write(load_regs(new_data))
 '''
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
