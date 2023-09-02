@@ -80,7 +80,7 @@ def app():
     
     #st.write('Predicted flexural capacity (kN.m): %.3f' % yhat)
     load_regs = pickle.load(open('shearp.pkl', 'rb'))
-    st.write(load_regs(new_data))
+    st.write(load_regs(dd))
 '''
     def get_sub(x):
         normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
